@@ -3,6 +3,13 @@ url = "/"
 layout = "default"
 is_hidden = 0
 ==
+use RainLab\Blog\Models\Post;
+
+function onStart()
+{
+	$this['posts'] = Post::orderBy("published_at", "desc")->limit(3)->get();
+}
+==
 <!-- Story About Us
     ================================================== -->
 	<section id="nino-story">
@@ -596,66 +603,37 @@ is_hidden = 0
     		<h2 class="nino-sectionHeading">
 				<span class="nino-subHeading">Our stories</span>
 				新闻动态
+				<br>
+				<br>
+				<span class="nino-subHeading"><a href="./blog">更多新闻……</a></span>
 			</h2>
 			<div class="sectionContent">
 				<div class="row">
+
+		
+					{% for post in posts %}
 					<div class="col-md-4 col-sm-4">
 						<article>
 							<div class="articleThumb">
-								<a href="#"><img src="{{'assets/images/our-blog/img-1.jpg'|theme}}" alt=""></a>
+								<a href="./blog/post/{{post.slug}}"><img src="{{ post.featured_images[0].path }}" alt=""></a>
 								<div class="date">
-									<span class="number">15</span>
-									<span class="text">Jan</span>
+									<!-- <span class="number">12</span> -->
+									<span class="text">{{ post.published_at|date('Y-m-d') }}</span>
 								</div>
 							</div>
-							<h3 class="articleTitle"><a href="">Lorem ipsum dolor sit amet</a></h3>
+							<h3 class="articleTitle"><a href="./blog/post/{{post.slug}}">{{ post.title }}</a></h3>
 							<p class="articleDesc">
-								Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+									{{ post.excerpt }}
 							</p>
 							<div class="articleMeta">
-								<a href="#"><i class="mdi mdi-eye nino-icon"></i> 543</a>
-								<a href="#"><i class="mdi mdi-comment-multiple-outline nino-icon"></i> 15</a>
+								<a href="./blog/post/{{post.slug}}"><i class="mdi mdi-eye nino-icon"></i> 1264</a>
+								<a href="./blog/post/{{post.slug}}"><i class="mdi mdi-comment-multiple-outline nino-icon"></i> 69</a>
 							</div>
 						</article>
 					</div>
-					<div class="col-md-4 col-sm-4">
-						<article>
-							<div class="articleThumb">
-								<a href="#"><img src="{{'assets/images/our-blog/img-2.jpg'|theme}}" alt=""></a>
-								<div class="date">
-									<span class="number">14</span>
-									<span class="text">Jan</span>
-								</div>
-							</div>
-							<h3 class="articleTitle"><a href="">sed do eiusmod tempor</a></h3>
-							<p class="articleDesc">
-								Adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-							</p>
-							<div class="articleMeta">
-								<a href="#"><i class="mdi mdi-eye nino-icon"></i> 995</a>
-								<a href="#"><i class="mdi mdi-comment-multiple-outline nino-icon"></i> 42</a>
-							</div>
-						</article>
-					</div>
-					<div class="col-md-4 col-sm-4">
-						<article>
-							<div class="articleThumb">
-								<a href="#"><img src="{{'assets/images/our-blog/img-3.jpg'|theme}}" alt=""></a>
-								<div class="date">
-									<span class="number">12</span>
-									<span class="text">Jan</span>
-								</div>
-							</div>
-							<h3 class="articleTitle"><a href="">incididunt ut labore et dolore</a></h3>
-							<p class="articleDesc">
-								Elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-							</p>
-							<div class="articleMeta">
-								<a href="#"><i class="mdi mdi-eye nino-icon"></i> 1264</a>
-								<a href="#"><i class="mdi mdi-comment-multiple-outline nino-icon"></i> 69</a>
-							</div>
-						</article>
-					</div>
+					{% endfor %}
+
+
 				</div>
 			</div>
     	</div>

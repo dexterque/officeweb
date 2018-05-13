@@ -1,5 +1,10 @@
 description = "Header of the page"
 ==
+function onStart()
+{
+	$this['title'] = $this->page->title;
+}
+==
 <!-- Header
     ================================================== -->
 	<header id="nino-header">
@@ -36,7 +41,7 @@ description = "Header of the page"
 					</div>
 				</div><!-- /.container-fluid -->
 			</nav>
-
+			{% if title == 'Home' %}
 			<section id="nino-slider" class="carousel slide container" data-ride="carousel">
 
 				<!-- Wrapper for slides -->
@@ -95,5 +100,8 @@ description = "Header of the page"
 					</li>
 				</ol>
 			</section>
+		
+			{% endif %}
+
 		</div>
 	</header><!--/#header-->
