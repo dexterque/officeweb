@@ -17,7 +17,7 @@ class __TwigTemplate_f7e6594b91e0b3fdecec6fee95a071515835127ec687963d260804b8c84
     {
         // line 1
         echo "<div class=\"row\">
-\t<div class=\"col-sm-8\">
+\t<div class=\"col-xs-12 col-md-8\" style=\"padding:0 60px\">
 \t";
         // line 3
         $context['__cms_component_params'] = [];
@@ -25,7 +25,7 @@ class __TwigTemplate_f7e6594b91e0b3fdecec6fee95a071515835127ec687963d260804b8c84
         unset($context['__cms_component_params']);
         // line 4
         echo "\t</div>
-\t<div class=\"col-sm-4\">
+\t<div class=\"col-xs-12 col-md-4\" style=\"padding:0 60px\">
     ";
         // line 6
         $context['__cms_component_params'] = [];
@@ -54,10 +54,10 @@ class __TwigTemplate_f7e6594b91e0b3fdecec6fee95a071515835127ec687963d260804b8c84
     public function getSourceContext()
     {
         return new Twig_Source("<div class=\"row\">
-\t<div class=\"col-sm-8\">
+\t<div class=\"col-xs-12 col-md-8\" style=\"padding:0 60px\">
 \t{% component 'blogPosts' %}
 \t</div>
-\t<div class=\"col-sm-4\">
+\t<div class=\"col-xs-12 col-md-4\" style=\"padding:0 60px\">
     {% component 'blogCategories' %}
 \t</div>
 </div>", "D:\\phpStudy\\PHPTutorial\\WWW\\officeweb/themes/ahmadcholluyev-mogo-theme/pages/blog/category.htm", "");
