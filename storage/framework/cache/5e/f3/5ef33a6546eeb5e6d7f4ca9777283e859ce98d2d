@@ -1,4 +1,4 @@
-1526287140a:1:{s:17:"blog/category.htm";a:13:{s:8:"fileName";s:17:"blog/category.htm";s:7:"content";s:637:"title = "Blog Category"
+1526289338a:1:{s:17:"blog/category.htm";a:13:{s:8:"fileName";s:17:"blog/category.htm";s:7:"content";s:637:"title = "Blog Category"
 url = "/blog/category/:slug"
 layout = "default"
 is_hidden = 0

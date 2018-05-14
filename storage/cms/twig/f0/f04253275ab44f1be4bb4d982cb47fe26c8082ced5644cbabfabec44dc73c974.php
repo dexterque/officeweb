@@ -40,7 +40,7 @@ class __TwigTemplate_7bd75119c02a1cb597cf6cd1fe0fe5bd5697ea59e851e2c7ab4c2435265
 \t\t\t\t\t<!-- Collect the nav links, forms, and other content for toggling -->
 \t\t\t\t\t<div class=\"nino-menuItem pull-right\">
 \t\t\t\t\t\t<div class=\"collapse navbar-collapse pull-left\" id=\"nino-navbar-collapse\">
-\t\t\t\t\t\t\t<ul class=\"nav navbar-nav\">
+\t\t\t\t\t\t\t<ul class=\"nav navbar-nav my-nav\">
 \t\t\t\t\t\t\t\t<li class=\"active\"><a href=\"#nino-header\">主页 <span class=\"sr-only\">(current)</span></a></li>
 \t\t\t\t\t\t\t\t<li><a href=\"#nino-story\">关于我们</a></li>
 \t\t\t\t\t\t\t\t<li><a href=\"#nino-services\">服务</a></li>
@@ -123,7 +123,24 @@ class __TwigTemplate_7bd75119c02a1cb597cf6cd1fe0fe5bd5697ea59e851e2c7ab4c2435265
         // line 98
         echo "
 \t\t</div>
-\t</header><!--/#header-->";
+\t</header><!--/#header-->
+<script src=\"https://cdn.bootcss.com/jquery/3.3.1/jquery.js\"></script>
+<script>
+\tvar title = '";
+        // line 103
+        echo twig_escape_filter($this->env, ($context["title"] ?? null), "html", null, true);
+        echo "';
+\tif (title !== 'Home') {
+\t\tvar url = window.location.href;
+\t\tvar domain = document.domain;
+
+\t\t\$(\".my-nav li a\").click(function () {
+\t\t\tvar url = \$(this).attr(\"href\");
+            window.location.href = './' + url;
+        })
+    }
+
+</script>";
     }
 
     public function getTemplateName()
@@ -138,7 +155,7 @@ class __TwigTemplate_7bd75119c02a1cb597cf6cd1fe0fe5bd5697ea59e851e2c7ab4c2435265
 
     public function getDebugInfo()
     {
-        return array (  124 => 98,  62 => 38,  60 => 37,  36 => 16,  19 => 1,);
+        return array (  131 => 103,  124 => 98,  62 => 38,  60 => 37,  36 => 16,  19 => 1,);
     }
 
     public function getSourceContext()
@@ -164,7 +181,7 @@ class __TwigTemplate_7bd75119c02a1cb597cf6cd1fe0fe5bd5697ea59e851e2c7ab4c2435265
 \t\t\t\t\t<!-- Collect the nav links, forms, and other content for toggling -->
 \t\t\t\t\t<div class=\"nino-menuItem pull-right\">
 \t\t\t\t\t\t<div class=\"collapse navbar-collapse pull-left\" id=\"nino-navbar-collapse\">
-\t\t\t\t\t\t\t<ul class=\"nav navbar-nav\">
+\t\t\t\t\t\t\t<ul class=\"nav navbar-nav my-nav\">
 \t\t\t\t\t\t\t\t<li class=\"active\"><a href=\"#nino-header\">主页 <span class=\"sr-only\">(current)</span></a></li>
 \t\t\t\t\t\t\t\t<li><a href=\"#nino-story\">关于我们</a></li>
 \t\t\t\t\t\t\t\t<li><a href=\"#nino-services\">服务</a></li>
@@ -242,6 +259,20 @@ class __TwigTemplate_7bd75119c02a1cb597cf6cd1fe0fe5bd5697ea59e851e2c7ab4c2435265
 \t\t\t{% endif %}
 
 \t\t</div>
-\t</header><!--/#header-->", "D:\\phpStudy\\PHPTutorial\\WWW\\officeweb/themes/ahmadcholluyev-mogo-theme/partials/header.htm", "");
+\t</header><!--/#header-->
+<script src=\"https://cdn.bootcss.com/jquery/3.3.1/jquery.js\"></script>
+<script>
+\tvar title = '{{title}}';
+\tif (title !== 'Home') {
+\t\tvar url = window.location.href;
+\t\tvar domain = document.domain;
+
+\t\t\$(\".my-nav li a\").click(function () {
+\t\t\tvar url = \$(this).attr(\"href\");
+            window.location.href = './' + url;
+        })
+    }
+
+</script>", "D:\\phpStudy\\PHPTutorial\\WWW\\officeweb/themes/ahmadcholluyev-mogo-theme/partials/header.htm", "");
     }
 }
