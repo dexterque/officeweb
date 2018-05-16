@@ -1,5 +1,5 @@
 <?php 
-use RainLab\Blog\Models\Post;class Cms5af907bb6ab08308877841_3261ee40700ddd86f968d8a9d8e8b50dClass extends \Cms\Classes\PageCode
+use RainLab\Blog\Models\Post;class Cms5afbfac69e72b507326558_18c8f098ffb78958001e37335f19ea9aClass extends \Cms\Classes\PageCode
 {
 
 public function onStart()
